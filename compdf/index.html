@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="tabela-com-nomes-geral">
+        <table id="names-table" class="names-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Contador</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As linhas serão adicionadas dinamicamente pelo JavaScript -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="title-table">
+        <label for="startDate">Data Inicial:</label>
+        <input type="date" id="startDate">
+        <label for="endDate">Data Final:</label>
+        <input type="date" id="endDate">
+        <button onclick="fillTable()" class="preencherT">Preencher Tabela</button>
+
+        <div id="Missas-nomes">
+            <button onclick="addSelectedNames()" class="Missas-nomes">Adicionar Nomes</button>
+            <!-- <button id="editarNomesBtn" onclick="editTable()" class="Missas-nomes">Editar Tabela</button> -->
+            <button onclick="addSelectedMissas()" class="Missas-nomes">Adicionar Missas</button>
+        </div>
+
+        <div class="add-remove-linha">
+            <button onclick="addRow()" id="addlinha">Adicionar Nova Linha</button>
+            <input type="number" id="addNewRowId" placeholder="ID da Linha">
+        </div>
+
+        <div class="add-remove-linha">
+            <button onclick="removeRow()" id="removelinha">Remover Linha</button>
+            <input type="number" id="removeRowId" placeholder="ID da Linha a Remover">
+        </div>
+
+        <div>
+            <button onclick="saveAsJPEG()" id="salvar-img">Salvar Imagem</button>
+        </div>
+    </div>
+
+    <div id="tabela">
+
+        
+        <div class="dia">
+            <p class="escala">Escala acolhida - Março </p>
+        </div>
+        
+        <table id="excel" class="teste">
+            <thead>
+                <tr class="tt-tabela">
+                    <th class="id">ID</th>
+                    <th>Data</th>
+                    <th>Dia da Semana</th>
+                    <th>Horário</th>
+                    <th>Nomes das Pessoas</th>
+                    <th>Missas</th>
+                </tr>
+            </thead>
+            <tbody class="teste">
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
